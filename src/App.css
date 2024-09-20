@@ -43,11 +43,17 @@ nav ul {
 nav a {
     color: #fe7223;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 35px;
 }
 
 nav a:hover {
     background-color: #fe7223;
     color: #ffffff;
     border-radius: 20px;
+}
+
+nav a:focus{
+        background-color: #fe7223;
+        color: #ffffff;
+        border-radius: 20px;
 }
