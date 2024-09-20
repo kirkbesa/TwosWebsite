@@ -57,3 +57,84 @@ nav a:focus{
         color: #ffffff;
         border-radius: 20px;
 }
+
+/*MENU*/
+
+.menu-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width:800px;
+    height: auto;
+    background: rgba(26, 26, 26, 0.2);
+    margin: 100px auto;
+    word-break: break-all;
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 25px;
+    outline: none;
+}
+
+.block-tabs{
+    margin: auto;
+    display: flex;
+}
+
+.tabs {
+    text-align: center;
+    background: rgb(128,128,128 0.075);
+    cursor: pointer;
+    font-size: 22px;
+    font-family: 'Fredoka', sans-serif;
+    padding: 0.5em 1em;
+    margin: 0.25em;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+}
+
+.tabs:hover{
+    background-color: #fe7223;
+    color: white;
+}
+
+.active-tabs{
+    background-color: #fe7223;
+    color: white;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+}
+
+.content-tabs{
+    flex-grow: 1;
+}
+
+.content{
+    padding: 10px;
+    display: none;
+    color: white;
+}
+
+.content h2{
+    padding: 0px 0px 5px 0px;
+}
+
+.content hr{
+    width: 100%;
+    height: 3px;
+    background-color: #fe7223;
+    border: none;
+    outline: none;
+    margin: 0;
+    border-radius: 100px;
+}
+
+.content p{
+    width: 100%;
+    height: 100%;
+}
+
+.active-content{
+    display:block;
+}
