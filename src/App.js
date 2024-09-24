@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home'; 
 import Menu from './pages/Menu'; 
 import Order from './pages/Order'; 
-import Login from './pages/Login'; 
+import Login from './pages/Login';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
