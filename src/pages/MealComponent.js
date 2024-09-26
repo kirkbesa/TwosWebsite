@@ -23,7 +23,7 @@ const MealComponent = (props) => {
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-outline-primary">-</button>
                                         <button type="" class="btn btn-primary disabled">QTY</button>
-                                        <button type="button" class="btn btn-outline-primary">+</button>
+                                        <button type="button" class="btn btn-outline-primary btn-right-radius">+</button>
                                     </div>
                                 </div>
                                 
