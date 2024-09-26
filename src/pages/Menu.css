@@ -221,7 +221,11 @@ h5 {
 }
 
 .btn-outline-primary {
-    border-radius: 20px;
+    border-radius: 20px 0px 0px 20px !important;
+}
+
+.btn-right-radius {
+    border-radius: 0px 20px 20px 0px !important;
 }
 
 .btn:hover {
