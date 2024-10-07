@@ -1,12 +1,17 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Home from './pages/Home'; 
 import Menu from './pages/Menu'; 
 import Order from './pages/Order'; 
 import Login from './pages/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import ProductDetailPage from './components/ProductDetailPage';
+import CartPage from './components/CartPage';
+
 function App() {
+
   return (
     <Router>
       <nav>
@@ -22,7 +27,7 @@ function App() {
         <Route path="/Menu" element={<Menu />} />
         <Route path="/Order" element={<Order />} /> 
         <Route path="/Login" element={<Login />} /> 
-      </Routes>  
+      </Routes>
     </Router>
   );
 };
