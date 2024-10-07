@@ -10,13 +10,14 @@ body {
 /*MENU*/
 
 .menu-container{
-    display: flex;
+    display: inline-block;
+    float: left;
     flex-direction: column;
     position: relative;
     width:70%;
     height: 100%;
-    min-height: 85vh;
-    max-height: 85vh;
+    min-height: calc(100vh - 110px - 2em);
+    min-height: calc(100vh - 110px - 2em);
     background: rgba(26, 26, 26, 0.2);
     margin: 1em;
     padding: 1em;
@@ -60,8 +61,9 @@ body {
 .tabs {
     text-align: center;
     overflow-wrap: break-word;
-    word-wrap: break-word; 
+    word-wrap: break-word;
     word-break: normal;
+    float:left;
     background: rgb(128,128,128 0.075);
     cursor: pointer;
     font-size: 22px;
@@ -207,7 +209,7 @@ h5 {
 
     /* QTY BUTTONS */
 .btn {
-    background-color: rgba(254, 114, 35, 0.5) !important;
+    background-color: #fe7223 !important;
     color: rgba(255, 255, 255, 0.5) !important;
     border-color: rgba(254, 114, 35, 0.5) !important;
     font-family: 'Poppins', sans-serif;
@@ -229,7 +231,7 @@ h5 {
 }
 
 .btn:hover {
-    background-color: #fe7223 !important;
+    background-color: rgba(254, 114, 35, 0.5) !important;
     color: #ffffff !important;
     border-color: #fe7223 !important;
 }
@@ -241,4 +243,21 @@ h5 {
     opacity: 100% !important;
 }
 
-
+/* CART */
+.cart-container {
+    display: inline-block;
+    color: #ffffff;
+    flex-direction: column;
+    position: relative;
+    width: calc(30% - 3em);
+    height: 100%;
+    min-height: calc(100vh - 110px - 2em);
+    min-height: calc(100vh - 110px - 2em);
+    background: rgba(26, 26, 26, 0.25);
+    margin: 1em 1em 1em 0px;
+    padding: 1em;
+    word-break: break-all;
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 25px;
+    outline: none;
+}
