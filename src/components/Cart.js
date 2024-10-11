@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Cart.css';
 import '../pages/Menu.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -45,7 +46,9 @@ const Cart = ({ cartItems }) => {
                         </tbody>
                     </table>
                     <div className="btn-container">
-                        <button id="checkout-btn" className="btn btn-primary" onClick={() => alert("eyyy wala pang checkout")}>Checkout</button>
+                    <Link to="/Checkout">
+                        <button id="checkout-btn" className="btn btn-primary">Checkout</button>
+                    </Link>
                     </div>
                 </div>
             )}
