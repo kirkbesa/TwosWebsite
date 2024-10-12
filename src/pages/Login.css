@@ -1,0 +1,117 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login-page {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 88vh; 
+  background-image: url("../images/TwosBackground3.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  margin: 0;
+}
+
+.login-container {
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color:  rgba(0, 0, 0, 0.4);
+}
+
+.login-page h2 {
+  text-align: center;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+#logoContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.login-page label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-page input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#loginBtn{
+  display: flex;
+  justify-content: center;
+}
+
+.login-btn {
+  width: 120px;
+  padding: 10px;
+  background-color: #fe7223;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: block;
+  border-radius: 25px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 20px;
+}
+
+.login-btn:hover {
+  background-color: #c25a1f;
+}
+
+.register-link {
+  color: #fe7223;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+.login-page p {
+  display: block;
+  margin-bottom: 0px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+#logoContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.LogoLI {
+  height: 80px; 
+  width: auto;
+  margin-bottom: 0px;
+}
