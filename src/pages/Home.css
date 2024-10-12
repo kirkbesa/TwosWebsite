@@ -1,0 +1,16 @@
+#homeContainer {
+    background-image: url("../images/TwosBackground.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    margin: 0;
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'Fredoka', sans-serif; 
+    color: white; 
+    text-align: center; 
+    margin-top: 20%; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
