@@ -12,7 +12,7 @@ const Cart = ({ cartItems }) => {
         : 0; // Set totalPrice to 0 if cartItems is not an array
 
     return (
-        <div>
+        <div className="parent-table-container scrollable-container">
             <h1>Your Cart</h1>
             {!cartItems ? (<p>Your cart is empty</p>) : (
                 <div>

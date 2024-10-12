@@ -47,8 +47,8 @@ const Menu = () => {
     }, []);
 
     return (
-        <div className="menu-parent">
-            <div className="menu-container">
+        <div className="menu-parent fade-in">
+            <div className="menu-container scrollable-container">
                 <div className="block-tabs">
                     <button className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(1)}>Burgers</button>
                     <button className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(2)}>Rice Meals</button>
@@ -56,7 +56,7 @@ const Menu = () => {
                     <button className={toggleState === 4 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(4)}>Extras</button>
                 </div>
                 <hr />
-                <div className="content-tabs scrollable-container">
+                <div className="content-tabs">
                     <div className={toggleState === 1 ? 'content active-content' : 'content'}>
                         <ProductList products={burgers} updateCart={updateCart} />
                     </div>
@@ -72,7 +72,7 @@ const Menu = () => {
                 </div>
             </div>
 
-            <div className="menu-cart-container">
+            <div className="menu-cart-container scrollable-container">
                 <Cart cartItems={cartItems} />  {}
             </div>
         </div>
