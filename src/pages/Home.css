@@ -1,4 +1,4 @@
-body {
+.homePageContainer {
     background-image: url("../images/TwosBackground.png");
     background-size: cover; 
     background-position: center; 
@@ -14,3 +14,4 @@ h1 {
     margin-top: 20%; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
 }
+

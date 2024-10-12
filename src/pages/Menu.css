@@ -1,0 +1,263 @@
+body {
+    background-image: url("../images/TwosBackground2Blurred.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    margin: 0; 
+    height: 100vh; 
+}
+
+/*MENU*/
+
+.menu-container{
+    display: inline-block;
+    float: left;
+    flex-direction: column;
+    position: relative;
+    width:70%;
+    height: 100%;
+    min-height: calc(100vh - 110px - 2em);
+    min-height: calc(100vh - 110px - 2em);
+    background: rgba(26, 26, 26, 0.2);
+    margin: 1em;
+    padding: 1em;
+    word-break: break-all;
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 25px;
+    outline: none;
+}
+
+    /* MENU OVERFLOW*/
+    .scrollable-container {
+        overflow-y: scroll;        /* Enable vertical scrolling */
+        overflow-x: hidden;      /* Hide horizontal scrollbar */
+    }
+    
+    /* Style for the scrollbar */
+    .scrollable-container::-webkit-scrollbar {
+        width: 9px;
+    }
+    
+    .scrollable-container::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0);     /* Background color of the track */
+    }
+    
+    .scrollable-container::-webkit-scrollbar-thumb {
+        background-color: rgba(254, 114, 35, 0.5);  /* Color of the scrollbar thumb */
+        border-radius: 10px;     /* Rounded corners for the thumb */
+        border: 1px solid rgba(254, 114, 35, 1);/* Padding around the scrollbar thumb */
+    }
+    
+    .scrollable-container::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(254, 114, 35, 1);   /* Color of the scrollbar thumb on hover */
+    }
+
+.block-tabs{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+.tabs {
+    text-align: center;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: normal;
+    float:left;
+    background: rgb(128,128,128 0.075);
+    cursor: pointer;
+    font-size: 22px;
+    font-family: 'Fredoka', sans-serif;
+    padding: 0.5em 1em;
+    margin: 0px 1em 0px 0px;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+}
+
+.tabs:hover{
+    background-color: #fe7223;
+    color: white;
+}
+
+.active-tabs{
+    background-color: #fe7223;
+    color: white;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+}
+
+.content-tabs{
+    flex-grow: 1;
+}
+
+.content{
+    display: none;
+    color: white;
+}
+
+.content h2{
+    padding: 0px;
+}
+
+hr {
+    width: 100%;
+    height: 3px;
+    background-color: #fe7223;
+    opacity: 50%;
+    border: none;
+    outline: none;
+    margin: 0 0 5 0;
+    border-radius: 100px;
+}
+
+.active-content{
+    display:block;
+}
+
+/* MENU CARDS */
+
+.nav-link {
+    text-align: center;
+    background: rgba(128,128,128 0.075);
+    cursor: pointer;
+    font-size: 22px;
+    font-family: 'Fredoka', sans-serif;
+    padding: 0.5em 1em;
+    margin: 0.25em;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+}
+
+.nav-link:hover{
+    background-color: #fe7223;
+    color: white;
+}
+
+.active {
+    background-color: #fe7223;
+    color: white;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+}
+
+/* ENSURE RESPONSIVE HEIGHT OF IMAGE BASED CONTENT */
+.img-parent {
+    flex-grow: 1;
+}
+
+.cropped-img {
+    height: 100%;
+    min-height: 200px;
+    max-height:200px;
+    width:100%;
+    object-fit: cover;
+}
+
+.card-body {
+    height: 100%;
+    max-height: 200px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-content: top;
+}
+
+/* CUSTOM COLORS OVERRIDE BOOTSTRAP */
+    /* CARDS */
+.card {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: #ffffff !important;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid rgba(0,0,0,0.6) !important;
+}
+
+    /* CARD TEXT */
+.card-text {
+    margin-bottom: 1em;
+    line-height: 1.5em;            
+    max-height: calc(1.5em * 5);
+    overflow: hidden;          
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    word-wrap: break-word; 
+    word-break: normal;
+}
+
+h5 {
+    font-size: 22px !important;
+}
+
+/* MEAL CARD BOTTOM -> PRICE AND QTY */
+.meal-card-bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    /* PRICE */
+.price {
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+    /* QTY BUTTONS */
+.btn {
+    background-color: #fe7223 !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    border-color: rgba(254, 114, 35, 0.5) !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-group {
+    bottom: 0px;
+    margin-left: auto;
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.btn-outline-primary {
+    border-radius: 20px 0px 0px 20px !important;
+}
+
+.btn-right-radius {
+    border-radius: 0px 20px 20px 0px !important;
+}
+
+.btn:hover {
+    background-color: rgba(254, 114, 35, 0.5) !important;
+    color: #ffffff !important;
+    border-color: #fe7223 !important;
+}
+
+.disabled {
+    background-color: #fe7223 !important;
+    color: #ffffff !important;
+    border-color: #fe7223 !important;
+    opacity: 100% !important;
+}
+
+/* CART */
+.cart-container {
+    display: inline-block;
+    color: #ffffff;
+    flex-direction: column;
+    position: relative;
+    width: calc(30% - 3em);
+    height: 100%;
+    min-height: calc(100vh - 110px - 2em);
+    min-height: calc(100vh - 110px - 2em);
+    background: rgba(26, 26, 26, 0.25);
+    margin: 1em 1em 1em 0px;
+    padding: 1em;
+    word-break: break-all;
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 25px;
+    outline: none;
+}

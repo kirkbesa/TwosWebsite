@@ -18,44 +18,47 @@ body {
 
 nav {
     background-color: rgb(0 0 0 / 50%);
-    padding: 40px; 
+    padding: 10px 40px; /* Reduced padding for better alignment */
 }
 
 .nav-container {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between logo and ul */
 }
 
-.logo {
-    height: 50px; 
+.Logo {
+    height: 80px; 
     width: auto;
+    margin-right: 20px; /* Space between logo and navigation links */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 nav ul {
     display: flex; 
-    justify-content: flex-end; 
     list-style-type: none;
     padding: 0;
     margin: 0; 
 }
 
 nav a {
-    color: #fe7223;
+    color: #fe7223; /* Default link color */
     text-decoration: none;
     padding: 10px 35px;
+    margin: 0px 5px;
+    border-radius: 20px; /* Adding a border-radius for consistency */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
 }
 
 nav a:hover {
-    background-color: #fe7223;
-    color: #ffffff;
-    border-radius: 20px;
+    background-color: #fe7223; /* Background color on hover */
+    color: #ffffff; /* Text color on hover */
 }
 
-nav a:focus{
-        background-color: #fe7223;
-        color: #ffffff;
-        border-radius: 20px;
+nav a:focus {
+    background-color: #fe7223; /* Background color on focus */
+    color: #ffffff; /* Text color on focus */
 }
 
 /*MENU*/
@@ -137,4 +140,16 @@ nav a:focus{
 
 .active-content{
     display:block;
+}
+
+nav a.active-link {
+    background-color: #fe7223; /* Highlight background for active link */
+    color: #ffffff; /* White text for active link */
+}
+
+
+
+/* MENU CONTENT */
+.content-tabs {
+    padding: 0px;
 }
