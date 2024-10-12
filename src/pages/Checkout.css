@@ -1,3 +1,19 @@
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+
 .checkout-container {
     display: flex;
     justify-content: center;
@@ -10,11 +26,13 @@
     color: #ffffff;
     flex-direction: column;
     position: relative;
-    width: 40vw;
+    width: 50vw;
     height: auto;
+    min-height: calc(100vh - 110px - 2em);
+    max-height: calc(100vh - 110px - 2em);
     background: rgba(26, 26, 26, 0.25);
     margin: auto;
-    padding: 3em;
+    padding: 1em 3em;
     word-break: break-all;
     border: 1px solid rgba(0,0,0,0.25);
     border-radius: 25px;

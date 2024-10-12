@@ -12,7 +12,7 @@ const CartPage = () => {
 
   return (
     <div className="checkout-container">
-      <div className="cart-container scrollable-container">
+      <div className="cart-container scrollable-container fade-in">
         <h1>Your Cart</h1>
           {!cartItems ? (<p>Your cart is empty</p>) : (
             <div>

@@ -6,7 +6,7 @@ import logo from '../images/TwosLogo.png';
 function Signup() {
   return (
     <div className='register-page'>
-    <div className="register-container">
+    <div className="register-container fade-in">
       <form className="login-form">
       <div id="logoContainer">
       <img src={logo} alt="Logo" className='LogoSU' /></div>
