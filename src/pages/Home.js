@@ -17,33 +17,18 @@ const Home = () => {
           <Carousel>
             <Carousel.Item>
               <img className="carouselImg d-block w-100" src={Image1} alt="First slide" />
-              <Carousel.Caption>
-                <h3>First slide</h3>
-              </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img className="carouselImg d-block w-100" src={Image2} alt="Second slide" />
-              <Carousel.Caption>
-                <h3>Second slide</h3>
-              </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img className="carouselImg d-block w-100" src={Image3} alt="Third slide" />
-              <Carousel.Caption>
-                <h3>Third slide</h3>
-              </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img className="carouselImg d-block w-100" src={Image4} alt="Fourth slide" />
-              <Carousel.Caption>
-                <h3>Fourth slide</h3>
-              </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img className="carouselImg d-block w-100" src={Image5} alt="Fifth slide" />
-              <Carousel.Caption>
-                <h3>Fifth slide</h3>
-              </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
         </div>
@@ -68,7 +53,7 @@ const Home = () => {
             <p>
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            {/* <img className="promoImg" src={promoImg} alt="promos"/> */}
+            <img className="promoImg" src={promoImg} alt="promos"/>
           </div>
         </div>
       </div>
