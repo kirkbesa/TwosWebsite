@@ -82,7 +82,7 @@ hr {
 }
 
 #checkout-btn {
-    background-color: rgba(254, 114, 35, 0.5) !important;
+    background-color: rgba(254, 114, 35, 1) !important;
     color: rgba(255, 255, 255, 1) !important;
     border-color: rgba(254, 114, 35, 1) !important;
     font-family: 'Poppins', sans-serif;
@@ -93,5 +93,5 @@ hr {
 }
 
 #checkout-btn:hover {
-    background-color: rgba(254, 114, 35, 1) !important;
+    background-color: rgba(254, 114, 35, 0.5) !important;
 }
