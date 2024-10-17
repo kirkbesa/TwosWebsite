@@ -36,18 +36,27 @@ h1 {
     justify-content: center; 
     align-items: center;     
     overflow: hidden;
+    background-color: black;
 }
 
-.carouselImages {
-    display: flex; 
-    flex: 0 0 auto; 
-    transition: transform 0.5s ease;
-}
-
-.carouselImages img {
+.carouselImg{
     width: 100%;
-    height: auto;
+    max-width: 100%;
     object-fit: cover;
+}
+
+.active.carousel-item{
+    margin:0px;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-item img{
+    object-fit:fill;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .homeBtn {
@@ -79,11 +88,11 @@ h1 {
 }
 
 #prev {
-    left: 10px; /* Position for the previous button */
+    left: 10px; 
 }
 
 #next {
-    right: 10px; /* Position for the next button */
+    right: 10px; 
 }
 
 #secondRow{
@@ -96,5 +105,47 @@ h1 {
 }
 
 .sRow h2{
-    
+    font-family: 'OrelegaOne', sans-serif;
+    font-size: 50px; 
+}
+
+.sRow p{
+    font-family: 'Poppins', sans-serif; 
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+#AboutUsContainer,
+#PromosContainer {
+    margin: 30px;
+    width: 800px; 
+    max-width: 800px; 
+    overflow: hidden; 
+}
+
+img.markerCircle{
+    position: absolute;
+    height: auto;
+}
+
+.aboutUsDiv{
+    display: flex;
+    align-items: center;
+}
+
+.promosDiv{
+    display: flex;
+    align-items: center;
+}
+
+.aboutUsDiv img.markerCircle{
+    width: 240px;
+    margin-left: -15px;
+    margin-bottom: 10px;
+}
+
+.promosDiv img.markerCircle{
+    width: 200px;
+    margin-left: -15px;
+    margin-bottom: 10px;
 }
