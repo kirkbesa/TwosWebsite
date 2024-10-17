@@ -1,10 +1,13 @@
-#homeContainer {
+#homeBGContainer {
     background-image: url("../images/TwosBackground.png");
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
     margin: 0;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
@@ -13,4 +16,85 @@ h1 {
     text-align: center; 
     margin-top: 20%; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+#homeContainer {
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 100%;
+    width: 75%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#imageCarousel {
+    max-width: 100%;
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    overflow: hidden;
+}
+
+.carouselImages {
+    display: flex; 
+    flex: 0 0 auto; 
+    transition: transform 0.5s ease;
+}
+
+.carouselImages img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.homeBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 100%;
+    max-height: 47px;
+    max-width: 47px;
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: #fe7223 !important;
+    color: rgba(255, 255, 255, 1) !important;
+    border-color: rgba(254, 114, 35, 0.5) !important;
+    font-family: 'Poppins', sans-serif;
+    margin: 0px 10px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.homeBtn:hover {
+    background-color: rgba(254, 114, 35, 0.5) !important;
+    color: #ffffff !important;
+    border-color: #fe7223 !important;
+}
+
+#prev {
+    left: 10px; /* Position for the previous button */
+}
+
+#next {
+    right: 10px; /* Position for the next button */
+}
+
+#secondRow{
+    display: flex;
+    margin: 20px 50px;
+}
+
+.sRow{
+    color: white;
+}
+
+.sRow h2{
+    
 }

@@ -27,7 +27,6 @@ body {
 
 .menu-container{
     display: inline-block;
-    float: left;
     flex-direction: column;
     position: relative;
     width:70%;
