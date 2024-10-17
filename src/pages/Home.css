@@ -121,6 +121,10 @@ h1 {
     margin-top: 5px;
 }
 
+
+#PromosContainer p{
+    margin-top: 20px;
+}
 #AboutUsContainer,
 #PromosContainer {
     margin: 30px;
