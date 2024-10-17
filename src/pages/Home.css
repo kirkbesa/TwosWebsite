@@ -23,13 +23,18 @@ h1 {
     max-width: 100%;
     width: 75%;
     height: 100%;
-    overflow-y: auto;
+    overflow: auto;
+}
+
+#homeContainer::-webkit-scrollbar {
+    display: none; 
 }
 
 #imageCarousel {
     max-width: 100%;
     width: 100%;
-    height: 50vh;
+    height: 600px;
+    max-height: 100%;
     position: relative;
     margin: auto;
     display: flex;
@@ -59,7 +64,7 @@ h1 {
     padding: 0;
 }
 
-.homeBtn {
+/* .homeBtn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -85,7 +90,7 @@ h1 {
     background-color: rgba(254, 114, 35, 0.5) !important;
     color: #ffffff !important;
     border-color: #fe7223 !important;
-}
+} */
 
 #prev {
     left: 10px; 
@@ -97,7 +102,7 @@ h1 {
 
 #secondRow{
     display: flex;
-    margin: 20px 50px;
+    margin: 20px 50px 20px 50px;
 }
 
 .sRow{
@@ -106,46 +111,53 @@ h1 {
 
 .sRow h2{
     font-family: 'OrelegaOne', sans-serif;
-    font-size: 50px; 
+    font-size: 40px; 
+    position: absolute;
 }
 
 .sRow p{
     font-family: 'Poppins', sans-serif; 
-    font-size: 25px;
-    margin-top: 20px;
+    font-size: 20px;
+    margin-top: 5px;
 }
 
 #AboutUsContainer,
 #PromosContainer {
     margin: 30px;
-    width: 800px; 
-    max-width: 800px; 
+    width: 900px; 
+    max-width: 900px; 
     overflow: hidden; 
 }
 
 img.markerCircle{
-    position: absolute;
     height: auto;
 }
 
 .aboutUsDiv{
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .promosDiv{
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .aboutUsDiv img.markerCircle{
-    width: 240px;
+    width: 190px;
     margin-left: -15px;
     margin-bottom: 10px;
 }
 
 .promosDiv img.markerCircle{
-    width: 200px;
-    margin-left: -15px;
+    width: 160px;
+    margin-left: -12px;
     margin-bottom: 10px;
+}
+
+.promoImg{
+    width: 100%;
+    margin-top: 30px;
 }
