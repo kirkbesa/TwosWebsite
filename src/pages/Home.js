@@ -12,7 +12,7 @@ import Carousel from 'react-bootstrap/Carousel';
 const Home = () => {
   return (
     <div id='homeBGContainer'>
-      <div id='homeContainer'>
+      <div id='homeContainer' className='fade-in'>
         <div id='imageCarousel'>
           <Carousel>
             <Carousel.Item>
