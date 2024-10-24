@@ -29,8 +29,8 @@ function App() {
         </ul>
         </div>
       </nav> */}
-
-      <Navbar collapseOnSelect expand="lg">
+      <Container expand="lg" fluid>
+      <Navbar collapseOnSelect expand="lg" sticky="top" className="custom-navbar">
         <Container className="nav-container">
           <Navbar.Brand to="/"><img src={Logo} alt="Logo" className='Logo' /></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav">
@@ -58,17 +58,18 @@ function App() {
         </Container>
       </Navbar>
 
-      <div className="base-content">
-        <Routes>
-          <Route path="/" element={<Home />} /> 
-          <Route path="/Menu" element={<Menu />} />
-          <Route path="/Checkout" element={<Checkout />} /> 
-          <Route path="/Login" element={<Login />} /> 
-          <Route path="/Signup" element={<Signup />} /> 
-        </Routes>  
-      </div>
+        <div className="base-content">
+          <Routes>
+            <Route path="/" element={<Home />} /> 
+            <Route path="/Menu" element={<Menu />} />
+            <Route path="/Checkout" element={<Checkout />} /> 
+            <Route path="/Login" element={<Login />} /> 
+            <Route path="/Signup" element={<Signup />} /> 
+          </Routes>  
+        </div>
+        </Container>
     </Router>
-    
+
     </CartProvider>
   );
 };
