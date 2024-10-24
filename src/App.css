@@ -21,12 +21,16 @@
     font-style: normal;
 }
 
+.container-fluid {
+    padding: 0px !important;
+}
+
 body {
     margin: 0;
     font-family: 'Fredoka', sans-serif;
     background-color: hsl(0, 0%, 96%);
     font-size: 20px;
-} 
+}
 
 body p {
     margin: 0;
@@ -39,9 +43,18 @@ body p {
 nav {
     font-family: 'Fredoka', sans-serif;
     font-size: 20px;
-    background-color: rgb(0 0 0 50%) !important;
     padding: 0px; 
+    margin: 0px;
 }
+
+.custom-navbar {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
+    background-color: rgb(0, 0, 0) !important;
+    padding: 0px !important;
+    z-index: 1030;
+}
+
 
 .nav-container {
     display: flex;
@@ -63,7 +76,7 @@ nav ul {
     justify-content: flex-end; 
     list-style-type: none;
     padding: 0;
-    margin: 0; 
+    margin: 0;
 }
 
 nav a {
@@ -100,5 +113,8 @@ nav a.active-link {
 
 /* BASE CONTENT */
 .base-content {
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 90px);
+    box-sizing: border-box;
 }

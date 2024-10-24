@@ -23,23 +23,62 @@ body {
     overflow-y: hidden;
 }
 
+.menu-parent {
+    margin: 0;
+    overflow: hidden;
+}
+
+#MenuContainer {
+    height: calc(100vh - 90px) !important;
+    padding: 1em;
+}
+
+.row {
+    height: 100%;
+}
+
+/* Portrait mode (less than 768px) */
+@media (max-width: 992px) {
+    .menu-parent {
+        overflow-y: auto; /* Allow scrolling in portrait mode */
+    }
+
+    .row {
+        height: auto;
+    }
+
+    .menu-cart-container {
+        margin: 1em 0px;
+    }
+}
+
+.menu-parent::-webkit-scrollbar {
+    display: none; 
+}
+
 /*MENU*/
 
-.menu-container{
+.menu-container {
     display: inline-block;
     flex-direction: column;
     position: relative;
-    width:70%;
+    width:100%;
     height: 100%;
-    min-height: calc(100vh - 110px - 2em);
-    max-height: calc(100vh - 110px - 2em);
-    background: rgba(26, 26, 26, 0.2);
-    margin: 1em;
+    background: rgba(0, 0, 0, 0.2);
     padding: 1em;
     word-break: break-all;
     border: 1px solid rgba(0,0,0,0.25);
     border-radius: 25px;
     outline: none;
+}
+
+.block-tabs nav {
+    width: 100%;
+}
+
+.block-tabs nav button {
+    width: 100%;
+    margin: 0px auto;
 }
 
     /* MENU OVERFLOW*/
@@ -90,11 +129,54 @@ body {
     outline: none;
     background: none;
     color: white;
+    transition: background-color 0.3s ease;
 }
 
 .tabs:hover{
     background-color: #fe7223;
     color: white;
+}
+
+.block-tabs .navbar-toggler {
+    padding: 0px !important;
+}
+
+.tabs-categories-container {
+    padding: 1em;
+}
+
+.tabs-categories-closed {
+    font-size: 25px;
+    font-family: 'Fredoka', sans-serif;
+    padding: 0.5em 1em;
+    margin: 0px 0px 1em 0px;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    background: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.tabs-categories.closed:hover {
+    background-color:#fff;
+}
+
+.tabs-categories-open {
+    font-size: 25px;
+    font-family: 'Fredoka', sans-serif;
+    padding: 0px;
+    margin: 0px 0px 1em 0px;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    background: none;
+    color: #fe7223;
+    transition: color 0.3s ease;
+}
+
+.tabs-categories.open:hover {
+    color: #ffffff;
 }
 
 .active-tabs{
@@ -264,14 +346,10 @@ h5 {
     color: #ffffff;
     flex-direction: column;
     position: relative;
-    width: calc(30% - 3em);
+    width: 100%;
     height: 100%;
-    min-height: calc(100vh - 110px - 2em);
-    max-height: calc(100vh - 110px - 2em);
-    background: rgba(26, 26, 26, 0.25);
-    margin: 1em 1em 1em 0px;
+    background: rgba(0, 0, 0, 0.25);
     padding: 1em;
-    word-break: break-all;
     border: 1px solid rgba(0,0,0,0.25);
     border-radius: 25px;
     outline: none;
