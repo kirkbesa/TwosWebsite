@@ -9,7 +9,10 @@ import promoImg from '../images/promoImage1.jpg';
 
 import Carousel from 'react-bootstrap/Carousel';
 
+import React, { useState, useEffect } from 'react';
+
 const Home = () => {
+
   return (
     <div id='homeBGContainer'>
       <div id='homeContainer' className='fade-in'>

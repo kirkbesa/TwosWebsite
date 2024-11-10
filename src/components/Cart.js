@@ -1,15 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Cart.css';
 import '../pages/Menu.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Cart = ({ cartItems }) => {
-
-    const totalPrice = Array.isArray(cartItems) ? 
-        cartItems.reduce((total, item) => {
-            return total + item.product.price * item.quantity}, 0)
-        : 0; // Set totalPrice to 0 if cartItems is not an array
+    const [cart, setCart] = useState([]);
+    const [error, setError] = useState(null);
+  
+    // Fetch cart data from the backend when the component mounts
+    useEffect(() => {
+      const fetchCart = async () => {
+        try {
+          const response = await fetch('http://localhost:5000/api/cart');
+          if (!response.ok) {
+            throw new Error('Failed to fetch cart data');
+          }
+          const data = await response.json();
+          setCart(data); // Set the fetched cart data into state
+        } catch (error) {
+          console.error('Error fetching cart data:', error);
+          setError(error.message); // Set the error message
+        }
+      };
+      fetchCart();
+    }, []);
+  
+    // Check if cart is an array
+    if (!Array.isArray(cart)) {
+      return <div>Error: Cart data is not valid.</div>;
+    }
+  
+    // Calculate total price
+    const totalPrice = cart.reduce((acc, item) => acc + item.productId.price * item.quantity, 0);
 
     return (
         <div className="parent-table-container scrollable-container">
@@ -22,7 +45,7 @@ const Cart = ({ cartItems }) => {
                                 <td><p>Meal</p></td>
                                 <td><p>Price</p></td>
                                 <td><p>Qty</p></td>
-                                <td className="fourth right"><p>Total Price</p></td>
+                                <td className="fourth right"><p>Price</p></td>
                             </tr>
                         </thead>
                         <tbody>
