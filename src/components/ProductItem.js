@@ -12,7 +12,7 @@ const ProductItem = ({product, updateCart}) => {
                 <div className="card h-100">
                     <div className="row g-0 img-parent">
                         <div className="col-md-4">
-                            <img src={`/images/${product.image}`} className="card-img-left rounded-start cropped-img" alt="B8" />
+                            <img src={`../images/${product.imageUrl}`} className="card-img-left rounded-start cropped-img" alt={`${product.image}`} />
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">

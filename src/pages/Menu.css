@@ -29,6 +29,7 @@ body {
 }
 
 #MenuContainer {
+    width: 1500px;
     height: calc(100vh - 90px) !important;
     padding: 1em;
 }

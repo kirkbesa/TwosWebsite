@@ -25,36 +25,54 @@ const Menu = () => {
         setToggleState(index);
     };
 
-    const [burgers, setBurgers] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/burgers')
-            .then(response => response.json())
-            .then(data => setBurgers(data))
-            .catch(error => console.error('Error fetching burgers:', error));
-    }, []);
+    const [cart, setCart] = useState([]);
 
-    const [ricemeals, setRicemeals] = useState([]);
+    // Fetch cart from backend on initial load
+  
     useEffect(() => {
-        fetch('http://localhost:5000/ricemeals')
-            .then(response => response.json())
-            .then(data => setRicemeals(data))
-            .catch(error => console.error('Error fetching rice meals:', error));
+      const fetchCart = async () => {
+        const response = await fetch('http://localhost:5000/api/cart');
+        const data = await response.json();
+        setCart(data);
+      };
+      fetchCart();
     }, []);
+  
+    const addToCart = async (product) => {
+      try {
+        const response = await fetch('http://localhost:5000/api/cart/add', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ productId: product._id }), // Ensure you're sending the correct productId
+        });
+        if (!response.ok) {
+          throw new Error('Failed to add item to cart');
+        }
+        const data = await response.json();
+        setCart(data); // Update the cart state with the response from the backend
+      } catch (error) {
+        console.error('Error adding to cart:', error);
+      }
+    };
+  
+    const removeFromCart = async (productId) => {
+      const response = await fetch('http://localhost:5000/api/cart/remove', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId }),
+      });
+      const data = await response.json();
+      setCart(data);
+    };
 
-    const [pastas, setPastas] = useState([]);
+    const [productList, setProductList] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/pastas')
-            .then(response => response.json())
-            .then(data => setPastas(data))
-            .catch(error => console.error('Error fetching pastas:', error));
-    }, []);
-
-    const [extras, setExtras] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/extras')
-            .then(response => response.json())
-            .then(data => setExtras(data))
-            .catch(error => console.error('Error fetching extras:', error));
+      const fetchProducts = async () => {
+        const response = await fetch('http://localhost:5000/api/products');
+        const data = await response.json();
+        setProductList(data);
+      };
+      fetchProducts();
     }, []);
 
     return (
@@ -90,16 +108,17 @@ const Menu = () => {
 
                         <div className="content-tabs">
                             <div className={toggleState === 1 ? 'content active-content' : 'content'}>
-                                <ProductList products={burgers} updateCart={updateCart} />
+                                {/* <ProductList products={burgers} updateCart={updateCart} /> */}
+                                <ProductList products={productList} updateCart={updateCart} />
                             </div>
                             <div className={toggleState === 2 ? 'content active-content' : 'content'}>
-                                <ProductList products={ricemeals} updateCart={updateCart} />
+                                {/* <ProductList products={ricemeals} updateCart={updateCart} /> */}
                             </div>
                             <div className={toggleState === 3 ? 'content active-content' : 'content'}>
-                                <ProductList products={pastas} updateCart={updateCart} />
+                                {/* <ProductList products={pastas} updateCart={updateCart} /> */}
                             </div>
                             <div className={toggleState === 4 ? 'content active-content' : 'content'}>
-                                <ProductList products={extras} updateCart={updateCart} />
+                                {/* <ProductList products={extras} updateCart={updateCart} /> */}
                             </div>
                         </div>
                         

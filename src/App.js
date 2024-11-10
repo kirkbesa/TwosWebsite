@@ -38,7 +38,7 @@ function App() {
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
                 height="30"
-                fill="#fe7223" // Change this to your desired color
+                fill="#fe7223"
                 viewBox="0 0 16 16"
             >
               <path fillRule="evenodd" d="M2 2h12a1 1 0 0 1 0 2H2a1 1 0 0 1 0-2zm0 6h12a1 1 0 0 1 0 2H2a1 1 0 0 1 0-2zm0 6h12a1 1 0 0 1 0 2H2a1 1 0 0 1 0-2z" />
