@@ -1,20 +1,15 @@
 import { useState, useEffect, useContext } from "react";
-import { NavLink } from "react-router-dom";
 import "../App.css";
 import '../pages/Menu.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from '../components/Cart.js';
 import ProductList from '../components/ProductList.js';
 import { CartContext } from '../components/CartContext.js';
-
-
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
 
 const Menu = () => {
     const [toggleState, setToggleState] = useState(1);
@@ -28,7 +23,6 @@ const Menu = () => {
     const [cart, setCart] = useState([]);
 
     // Fetch cart from backend on initial load
-  
     useEffect(() => {
       const fetchCart = async () => {
         const response = await fetch('http://localhost:5000/api/cart');
@@ -65,14 +59,27 @@ const Menu = () => {
       setCart(data);
     };
 
-    const [productList, setProductList] = useState([]);
+    const [products, setProducts] = useState({ burgers: [], riceMeals: [], pastas: [], extras: [] });  
+    const fetchProductsByCategory = async (category) => {
+        try {
+            const response = await fetch(`http://localhost:5000/api/products/category/${category}`);
+        
+            if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+        
+            const products = await response.json();
+            setProducts((prevProducts) => ({ ...prevProducts, [category]: products }));
+        } catch (error) {
+            console.error(`Error fetching ${category} products:`, error);
+        }
+    };  
+      
+      // Fetch data for each category when component mounts
     useEffect(() => {
-      const fetchProducts = async () => {
-        const response = await fetch('http://localhost:5000/api/products');
-        const data = await response.json();
-        setProductList(data);
-      };
-      fetchProducts();
+        fetchProductsByCategory('burgers');
+        fetchProductsByCategory('pastas');
+        fetchProductsByCategory('ricemeals');
     }, []);
 
     return (
@@ -108,17 +115,16 @@ const Menu = () => {
 
                         <div className="content-tabs">
                             <div className={toggleState === 1 ? 'content active-content' : 'content'}>
-                                {/* <ProductList products={burgers} updateCart={updateCart} /> */}
-                                <ProductList products={productList} updateCart={updateCart} />
+                                <ProductList products={products.burgers} updateCart={updateCart} />
                             </div>
                             <div className={toggleState === 2 ? 'content active-content' : 'content'}>
-                                {/* <ProductList products={ricemeals} updateCart={updateCart} /> */}
+                                <ProductList products={products.pastas} updateCart={updateCart} />
                             </div>
                             <div className={toggleState === 3 ? 'content active-content' : 'content'}>
-                                {/* <ProductList products={pastas} updateCart={updateCart} /> */}
+                                <ProductList products={products.ricemeals} updateCart={updateCart} />
                             </div>
                             <div className={toggleState === 4 ? 'content active-content' : 'content'}>
-                                {/* <ProductList products={extras} updateCart={updateCart} /> */}
+                                <ProductList products={products.extras} updateCart={updateCart} />
                             </div>
                         </div>
                         
@@ -126,9 +132,9 @@ const Menu = () => {
                     </Col>
 
                     <Col xs={12} lg={4}>
-                    <div className="menu-cart-container scrollable-container">
-                        <Cart cartItems={cartItems} />
-                    </div>
+                        <div className="menu-cart-container scrollable-container">
+                            <Cart cartItems={cartItems} />
+                        </div>
                     </Col>
 
                 </Row>
