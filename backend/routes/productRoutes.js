@@ -2,17 +2,15 @@ const express = require('express');
 const Product = require('../models/productModel');
 const router = express.Router();
 
-// Fetch all products
-
-router.get('/', async (req, res) => {
-
+// Fetch products by category
+router.get('/category/:category', async (req, res) => {
+  const { category } = req.params;
   try {
-    const products = await Product.find();
-    res.json(products);
+    const products = await Product.find({ category: category });
+    res.json(products); // Send JSON response
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-
 });
 
 // Add a product (you can test this route with Postman)
