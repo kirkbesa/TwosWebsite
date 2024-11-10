@@ -1,7 +1,7 @@
 @keyframes fadeIn {
     0% {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(0);
     }
     100% {
       opacity: 1;
@@ -10,7 +10,7 @@
   }
   
   .fade-in {
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn .6s ease-in-out;
   }
 
 body {
@@ -119,12 +119,13 @@ body {
     word-wrap: break-word;
     word-break: normal;
     float:left;
+    white-space: nowrap;
     background: rgb(128,128,128 0.075);
     cursor: pointer;
     font-size: 22px;
     font-family: 'Fredoka', sans-serif;
-    padding: 0.5em 1em;
-    margin: 0px 1em 0px 0px;
+    padding: 0.5em 2.5em;
+    margin: 0px .5em 0px 0px !important;
     border-radius: 1em;
     border: none;
     outline: none;
@@ -183,8 +184,6 @@ body {
 .active-tabs{
     background-color: #fe7223;
     color: white;
-    border-radius: 1em;
-    padding: 0.5em 1em;
 }
 
 .content-tabs{
