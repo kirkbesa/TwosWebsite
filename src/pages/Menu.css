@@ -24,12 +24,12 @@ body {
 }
 
 .menu-parent {
-    width: 80%;
     margin: 0;
     overflow: hidden;
 }
 
 #MenuContainer {
+    width: 1500px;
     height: calc(100vh - 90px) !important;
     padding: 1em;
 }
@@ -78,21 +78,8 @@ body {
 }
 
 .block-tabs nav button {
-    width: auto;
+    width: 100%;
     margin: 0px auto;
-}
-
-.block-tabs nav .viewCartButton {
-    width: auto;
-    margin: 0px;
-    margin-left: auto !important;
-    color: #fe7223;
-    border: 1px solid #fe7223;
-    transition: color 0.3s ease;
-}
-
-.block-tabs nav .viewCartButton:hover {
-    color: white;
 }
 
     /* MENU OVERFLOW*/
@@ -137,6 +124,7 @@ body {
     font-size: 22px;
     font-family: 'Fredoka', sans-serif;
     padding: 0.5em 1em;
+    margin: 0px 1em 0px 0px;
     border-radius: 1em;
     border: none;
     outline: none;
@@ -359,18 +347,13 @@ h5 {
     color: #ffffff;
     flex-direction: column;
     position: relative;
-    background-color: black;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 1em;
     border: 1px solid rgba(0,0,0,0.25);
-    margin: 0px;
-}
-
-.offcanvas-body, .offcanvas-header {
-    background-color: black;
-    color: white;
-}
-
-svg {
-    margin-left: auto;
+    border-radius: 25px;
+    outline: none;
 }
 
 .cart-container h1 {
