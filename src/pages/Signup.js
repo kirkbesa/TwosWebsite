@@ -35,7 +35,7 @@ function Signup() {
         </div>
       </form>
       <p>
-        Have an account? <Link to="/Login" className="Login">Login</Link>
+        Already have an account? <Link to="/Login" className="Login">Login</Link>
       </p>
     </div>
     </div>
