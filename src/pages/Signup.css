@@ -17,7 +17,7 @@
   display: flex; 
   justify-content: center; 
   align-items: center; 
-  height: 88vh; 
+  width: 100%;
   background-image: url("../images/TwosBackground3.png");
   background-size: cover; 
   background-position: center; 
