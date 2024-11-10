@@ -3,10 +3,10 @@ const CartItem = require('../models/cartModel');
 const Product = require('../models/productModel'); // Make sure to import your Product model
 const router = express.Router();
 
-// Get Cart
+// Cart Route - Ensure product details are populated
 router.get('/', async (req, res) => {
   try {
-    const cartItems = await CartItem.find().populate('productId'); // Populate to get product details
+    const cartItems = await CartItem.find().populate('productId');
     res.json(cartItems);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 });
 
 // Remove from Cart
-router.post('/remove', async (req, res) => {
+router.delete('/remove', async (req, res) => {
   const { productId } = req.body;
   try {
     await CartItem.deleteOne({ productId }); // Remove item by productId

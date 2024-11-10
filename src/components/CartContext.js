@@ -14,12 +14,11 @@ export const CartProvider = ({ children }) => {
 
   const updateCart = (product, action) => {
     let updatedCartItems;
-
     if (action === 'add') {
-      const existingItem = cartItems.find(item => item.product.id === product.id);
+      const existingItem = cartItems.find(item => item.product._id === product._id);
       if (existingItem) {
         updatedCartItems = cartItems.map(item =>
-          item.product.id === product.id
+          item.product._id === product._id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
@@ -28,16 +27,16 @@ export const CartProvider = ({ children }) => {
       }
       setCartItems(updatedCartItems);
 
-      fetch('http://localhost:5000/cart', {
+      fetch('http://localhost:5000/api/cart/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: product.id, quantity: 1 }),
+        body: JSON.stringify({ productId: product._id, quantity: 1 }),
       }).catch(error => console.error('Error adding to cart:', error));
 
     } else if (action === 'remove') {
       updatedCartItems = cartItems
         .map(item =>
-          item.product.id === product.id
+          item.product._id === product._id
             ? { ...item, quantity: item.quantity - 1 }
             : item
         )
@@ -45,8 +44,11 @@ export const CartProvider = ({ children }) => {
 
       setCartItems(updatedCartItems);
 
-      fetch(`http://localhost:5000/cart/${product.id}`, { method: 'DELETE' })
-        .catch(error => console.error('Error removing from cart:', error));
+      fetch('http://localhost:5000/api/cart/remove', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId: product.id }),
+      }).catch(error => console.error('Error removing from cart:', error));
     }
   };
 
