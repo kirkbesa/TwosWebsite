@@ -11,7 +11,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+
 const Menu = () => {
+    const dbURI = 'mongodb+srv://adminbesa:admin@twosdatabase.4pdby.mongodb.net/';
     const [toggleState, setToggleState] = useState(1);
     const [categoryState, setCategoryState] = useState(false);
     const { cartItems, updateCart } = useContext(CartContext);
