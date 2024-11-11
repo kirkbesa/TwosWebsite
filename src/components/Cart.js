@@ -6,12 +6,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { CartContext } from './CartContext';  // Import the CartContext
 
 const Cart = () => {
-    const { cartItems, updateCart } = useContext(CartContext);  // Get cart items from context
-    const [error, setError] = useState(null);
+    const { cartItems, updateCart } = useContext(CartContext);  // Get cart items and updateCart from context
 
-    // Calculate total price whenever cartItems change
-    const totalPrice = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
-
+    const totalPrice = cartItems.reduce((acc, item) => {
+        const price = item.productId?.price || 0;
+        return acc + price * item.quantity;
+      }, 0);
+      
     return (
         <div className="parent-table-container scrollable-container">
             <h1>Your Cart</h1>
@@ -29,21 +30,21 @@ const Cart = () => {
                             </tr>
                         </thead>
                         <tbody>
-                        {cartItems.map(item => (
-                            <tr className="data" key={item.product._id}>
-                                <td className="first"><p>{item.product.name}</p></td>
-                                <td className="second"><p>₱{item.product.price}</p></td>
-                                <td className="third"><p>{item.quantity}x</p></td>
-                                <td className="fourth right"><p>₱{item.product.price * item.quantity}</p></td>
-                            </tr>
-                        ))}
+                            {cartItems.map((item) => (
+                                <tr key={item._id}>
+                                    <td>{item.productId ? item.productId.name : 'No product name'}</td>
+                                    <td>{item.productId ? `₱${item.productId.price}` : 'N/A'}</td>
+                                    <td>{item.quantity}</td>
+                                    <td>{item.productId ? `₱${item.productId.price * item.quantity}` : '₱0.00'}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                     <hr />
                     <table className="total">
                         <tbody>
                             <tr>
-                                <td><p>Total:</p> </td>
+                                <td><p>Total:</p></td>
                                 <td><p>₱{totalPrice}</p></td>
                             </tr>
                         </tbody>
