@@ -5,15 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from '../components/Cart.js';
 import ProductList from '../components/ProductList.js';
 import { CartContext } from '../components/CartContext.js';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
 const Menu = () => {
-    const dbURI = 'mongodb+srv://adminbesa:admin@twosdatabase.4pdby.mongodb.net/';
     const [toggleState, setToggleState] = useState(1);
     const [categoryState, setCategoryState] = useState(false);
     const { cartItems, updateCart } = useContext(CartContext);
