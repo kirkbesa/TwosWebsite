@@ -19,7 +19,7 @@ const ProductItem = ({product, updateCart}) => {
                                 <h5 className="card-title">{product.name}</h5>
                                 <p className="card-text">{product.description}</p>      
                                 <div className="meal-card-bottom">
-                                    <h3 className="price">{product.price}</h3>
+                                    <h3 className="price">₱{product.price}</h3>
                                     <div className="btn-group" role="group">
                                         <button type="button" className="btn btn-outline-primary" onClick={() => updateCart(product, 'remove')}>-</button>
                                         <button type="" className="btn btn-primary disabled">QTY</button>
