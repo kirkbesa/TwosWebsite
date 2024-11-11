@@ -25,13 +25,14 @@ body {
 
 .menu-parent {
     margin: 0;
+    padding: 1em;
     overflow: hidden;
 }
 
+
 #MenuContainer {
-    width: 1500px;
     height: calc(100vh - 90px) !important;
-    padding: 1em;
+    margin: auto 0px;
 }
 
 /* Portrait mode (less than 768px) */

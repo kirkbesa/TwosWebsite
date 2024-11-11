@@ -88,9 +88,9 @@ const Menu = () => {
     return (
         
             <div className="menu-parent fade-in">
-                <Container expand="lg" id="MenuContainer">
+                <Container expand="lg" fluid id="MenuContainer">
                 <Row>
-                    <Col xs={12} lg={8}>
+                    <Col xs={12} sm={12} md={12} lg={8}>
                     <div className="menu-container">
                         <div className="block-tabs">
                             {/* <button className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(1)}>Burgers</button>
@@ -134,7 +134,7 @@ const Menu = () => {
                     </div>
                     </Col>
 
-                    <Col xs={12} lg={4}>
+                    <Col xs={12} sm={12} md={12} lg={4}>
                         <div className="menu-cart-container">
                             <Cart cartItems={cartItems} />
                         </div>
