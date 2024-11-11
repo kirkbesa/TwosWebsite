@@ -32,32 +32,32 @@ const Menu = () => {
       fetchCart();
     }, []);
   
-    const addToCart = async (product) => {
-      try {
-        const response = await fetch('http://localhost:5000/api/cart/add', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ productId: product._id }), // Ensure you're sending the correct productId
-        });
-        if (!response.ok) {
-          throw new Error('Failed to add item to cart');
-        }
-        const data = await response.json();
-        setCart(data); // Update the cart state with the response from the backend
-      } catch (error) {
-        console.error('Error adding to cart:', error);
-      }
-    };
+    // const addToCart = async (product) => {
+    //   try {
+    //     const response = await fetch('http://localhost:5000/api/cart/add', {
+    //       method: 'POST',
+    //       headers: { 'Content-Type': 'application/json' },
+    //       body: JSON.stringify({ productId: product._id }), // Ensure you're sending the correct productId
+    //     });
+    //     if (!response.ok) {
+    //       throw new Error('Failed to add item to cart');
+    //     }
+    //     const data = await response.json();
+    //     setCart(data); // Update the cart state with the response from the backend
+    //   } catch (error) {
+    //     console.error('Error adding to cart:', error);
+    //   }
+    // };
   
-    const removeFromCart = async (productId) => {
-      const response = await fetch('http://localhost:5000/api/cart/remove', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId }),
-      });
-      const data = await response.json();
-      setCart(data);
-    };
+    // const removeFromCart = async (productId) => {
+    //   const response = await fetch('http://localhost:5000/api/cart/remove', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ productId }),
+    //   });
+    //   const data = await response.json();
+    //   setCart(data);
+    // };
 
     const [products, setProducts] = useState({ burgers: [], riceMeals: [], pastas: [], extras: [] });  
     const fetchProductsByCategory = async (category) => {
