@@ -14,8 +14,17 @@ table {
     margin: auto;
 }
 
+.table-container {
+    width: 100%;
+    border-collapse:separate;
+    border-spacing: 10px;
+    padding: 1em !important;
+}
+
+
 tr {
     width: 100%;
+    margin: 1em 0em;
 }
 
 td {
@@ -24,7 +33,7 @@ td {
 
 /* MAIN ROW */
 .mainRow p {
-    font-size: 150%;
+    font-size: 120%;
     font-weight: 700 !important;
 }
 
@@ -94,4 +103,11 @@ hr {
 
 #checkout-btn:hover {
     background-color: rgba(254, 114, 35, 0.5) !important;
+}
+
+.btn {
+    background-color: #fe7223 !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    border-color: rgba(254, 114, 35, 0.5) !important;
+    font-family: 'Poppins', sans-serif;
 }
