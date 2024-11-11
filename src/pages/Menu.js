@@ -82,6 +82,7 @@ const Menu = () => {
         fetchProductsByCategory('burgers');
         fetchProductsByCategory('pastas');
         fetchProductsByCategory('ricemeals');
+        fetchProductsByCategory('extras');
     }, []);
 
     return (
@@ -90,7 +91,7 @@ const Menu = () => {
                 <Container expand="lg" id="MenuContainer">
                 <Row>
                     <Col xs={12} lg={8}>
-                    <div className="menu-container scrollable-container">
+                    <div className="menu-container">
                         <div className="block-tabs">
                             {/* <button className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(1)}>Burgers</button>
                             <button className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(2)}>Rice Meals</button>
@@ -115,15 +116,15 @@ const Menu = () => {
                         </div>
                         <hr />
 
-                        <div className="content-tabs">
+                        <div className="content-tabs scrollable-container">
                             <div className={toggleState === 1 ? 'content active-content' : 'content'}>
                                 <ProductList products={products.burgers} updateCart={updateCart} />
                             </div>
                             <div className={toggleState === 2 ? 'content active-content' : 'content'}>
-                                <ProductList products={products.pastas} updateCart={updateCart} />
+                                <ProductList products={products.ricemeals} updateCart={updateCart} />
                             </div>
                             <div className={toggleState === 3 ? 'content active-content' : 'content'}>
-                                <ProductList products={products.ricemeals} updateCart={updateCart} />
+                                <ProductList products={products.pastas} updateCart={updateCart} />
                             </div>
                             <div className={toggleState === 4 ? 'content active-content' : 'content'}>
                                 <ProductList products={products.extras} updateCart={updateCart} />
@@ -134,7 +135,7 @@ const Menu = () => {
                     </Col>
 
                     <Col xs={12} lg={4}>
-                        <div className="menu-cart-container scrollable-container">
+                        <div className="menu-cart-container">
                             <Cart cartItems={cartItems} />
                         </div>
                     </Col>
