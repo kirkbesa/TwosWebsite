@@ -4,6 +4,7 @@
     background-position: center; 
     background-repeat: no-repeat; 
     margin: 0;
+    padding: 0;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -24,6 +25,11 @@ h1 {
     width: 75%;
     height: 100%;
     overflow: auto;
+}
+
+.base-content{
+    margin: 0;
+    padding: 0;
 }
 
 #homeContainer::-webkit-scrollbar {
