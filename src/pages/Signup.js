@@ -5,6 +5,7 @@ import logo from '../images/TwosLogo.png';
 
 function Signup() {
   return (
+    <div className='base-content'>
     <div className='register-page'>
     <div className="register-container fade-in">
       <form className="login-form">
@@ -37,6 +38,7 @@ function Signup() {
       <p>
         Have an account? <Link to="/Login" className="Login">Login</Link>
       </p>
+    </div>
     </div>
     </div>
   );
