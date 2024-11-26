@@ -1,11 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Cart.css';
 import '../pages/Menu.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { CartContext } from './CartContext';  // Import the CartContext
+import { CartContext } from './CartContext';
+import { AuthContext } from '../context/authContext';
 
 const Cart = () => {
+    const { isAuthenticated } = useContext(AuthContext);
     const { cartItems, updateCart } = useContext(CartContext);  // Get cart items and updateCart from context
 
     const totalPrice = cartItems.reduce((acc, item) => {
@@ -14,10 +16,15 @@ const Cart = () => {
       }, 0);
       
     return (
+        <>
+        { isAuthenticated ?
+        <>
         <div className="parent-table-container scrollable-container">
             <h1>Your Cart</h1>
             {cartItems.length === 0 ? (
-                <p>Your cart is empty</p>
+                <div className="empty-cart"> 
+                    <p>Your cart is empty.</p>
+                </div>
             ) : (
                 <div>
                     <table className="table-container">
@@ -71,6 +78,16 @@ const Cart = () => {
                 </div>
             )}
         </div>
+        </>
+        :
+        <>
+        <div className="not-logged-in">
+            <h3>You are not logged in.</h3>
+            <NavLink to="/login" className="btn">Login</NavLink>
+        </div>
+        </>
+        }
+        </>
     );
 };
 

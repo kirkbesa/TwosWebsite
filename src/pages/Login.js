@@ -1,43 +1,42 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "./Login.css";
-import logo from "../images/TwosLogo.png";
+import React, { useState, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './Login.css';
+import logo from '../images/TwosLogo.png'; 
+import { useAuth } from '../context/authContext';
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const userData = {
-      username,
-      password,
-    };
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
 
     try {
-      const response = await fetch("http://localhost:5000/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
+        const response = await fetch('http://localhost:5000/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
 
-      if (response.ok) {
-        const result = await response.json();
-        console.log(result);
+        const data = await response.json();
 
-        navigate("/home");
-      } else {
-        const errorData = await response.json();
-        setError(errorData.message);
-      }
-    } catch (err) {
-      console.error("Error:", err);
-      setError("Server error. Please try again later.");
+        if (response.ok) {
+            login(data.user);
+            navigate('/');
+            console.log("LOG IN SUCCESS KIRK")
+        } else {
+            console.error("Login failed:", data.message);
+        }
+    } catch (error) {
+        console.error("Error during login:", error);
     }
   };
 
@@ -47,34 +46,18 @@ function Login() {
         <div className="login-container fade-in">
           <form className="login-form" onSubmit={handleSubmit}>
             <div id="logoContainer">
-              <img src={logo} alt="Logo" className="LogoLI" />
+              <img src={logo} alt="Logo" className='LogoLI' />
             </div>
             <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" name="email" ref={emailRef} required />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+              <input type="password" id="password" name="password" ref={passwordRef} required />
             </div>
             <div id="loginBtn">
-              <button className="login-btn" type="submit">
-                Login
-              </button>
+              <button className="login-btn" type="submit">Login</button>
             </div>
           </form>
           {error && <p className="error-message">{error}</p>}

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 import logo from '../images/TwosLogo.png';
+import { isAuthenticated, user } from '../context/authContext.js';
 
 function Nav() {
     return (
@@ -18,9 +19,24 @@ function Nav() {
             <li>
               <Link to="/Order" className="nav-link">Order</Link>
             </li>
+            { isAuthenticated ?
+
             <li className="login-item">
               <Link to="/Login" className="nav-link">Login</Link>
             </li>
+            
+            :
+
+            <>
+            <li><p>Hello, { user }</p></li>
+
+            <li className="login-item">
+              <Link to="/" className="nav-link">Logout</Link>
+            </li>
+            </>
+
+            }
+            
           </ul>
         </div>
       </nav>

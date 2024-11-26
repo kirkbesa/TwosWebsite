@@ -5,8 +5,9 @@ const bcrypt = require("bcryptjs");
 const User = require("./models/User");
 const authRoutes = require("./routes/authRoutes");
 
-const productRoutes = require("./routes/productRoutes");
-const cartRoutes = require("./routes/cartRoutes");
+const productRoutes = require('./routes/productRoutes');
+const cartRoutes = require('./routes/cartRoutes');
+const authRoutes = require('./routes/authRoutes');
 const app = express();
 
 const dbURI =
@@ -15,9 +16,10 @@ const dbURI =
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/products", productRoutes);
-app.use("/api/cart", cartRoutes);
-app.use("/api", authRoutes);
+// Routes
+app.use('/api/products', productRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api', authRoutes);
 
 app.post("/api/register", async (req, res) => {
   const { fullName, email, username, password, confirmPassword } = req.body;

@@ -88,8 +88,8 @@ const Menu = () => {
         
             <div className="menu-parent fade-in">
                 <Container expand="lg" fluid id="MenuContainer">
-                <Row>
-                    <Col xs={12} sm={12} md={12} lg={8}>
+                <Row className="menu-parent-row">
+                    <Col xs={12} sm={12} md={12} lg={8} >
                     <div className="menu-container">
                         <div className="block-tabs">
                             {/* <button className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(1)}>Burgers</button>

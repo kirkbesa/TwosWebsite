@@ -1,3 +1,17 @@
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.empty-cart p {
+    font-size: 110%;
+}
+
+td, h3 {
+    font-family: 'Poppins';
+}
+
 h1 {
     font-size: 300%;
     margin: 0px 0px 0.5em 0px;
@@ -110,4 +124,12 @@ hr {
     color: rgba(255, 255, 255, 1) !important;
     border-color: rgba(254, 114, 35, 0.5) !important;
     font-family: 'Poppins', sans-serif;
+}
+
+.not-logged-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
