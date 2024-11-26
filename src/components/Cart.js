@@ -22,7 +22,9 @@ const Cart = () => {
         <div className="parent-table-container scrollable-container">
             <h1>Your Cart</h1>
             {cartItems.length === 0 ? (
-                <p>Your cart is empty</p>
+                <div className="empty-cart"> 
+                    <p>Your cart is empty.</p>
+                </div>
             ) : (
                 <div>
                     <table className="table-container">
