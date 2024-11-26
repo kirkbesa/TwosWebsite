@@ -27,7 +27,7 @@
 
 .register-container {
   width: 600px;
-  height: 670px;
+  height: auto;
   margin: auto;
   padding: 20px;
   border: 1px solid transparent;
