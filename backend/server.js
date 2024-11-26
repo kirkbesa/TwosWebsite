@@ -4,6 +4,7 @@ const express = require('express');
 
 const productRoutes = require('./routes/productRoutes');
 const cartRoutes = require('./routes/cartRoutes');
+const authRoutes = require('./routes/authRoutes');
 const app = express();
 const dbURI = 'mongodb+srv://adminbesa:admin@twosdatabase.4pdby.mongodb.net/twos-database?retryWrites=true&w=majority';
 
@@ -15,6 +16,7 @@ app.use(express.json());
 // Routes
 app.use('/api/products', productRoutes);
 app.use('/api/cart', cartRoutes);
+app.use('/api', authRoutes);
 
 // MongoDB Connection
 mongoose.connect(dbURI, {

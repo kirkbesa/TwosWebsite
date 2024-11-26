@@ -21,6 +21,13 @@
     font-style: normal;
 }
 
+nav .disabledLink {
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+    background-color:rgb(0, 0, 0, 0) !important;
+    color: #fe7223 !important;
+}
+
 .container-fluid {
     padding: 0px !important;
 }
