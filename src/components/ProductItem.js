@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../pages/Menu.css';
 import '../App.css';
+import { AuthContext } from '../context/authContext';
 
 const ProductItem = ({product, updateCart}) => {
+    const { isAuthenticated } = useContext(AuthContext);
 
     return (
         <div>
@@ -20,11 +22,18 @@ const ProductItem = ({product, updateCart}) => {
                                 <p className="card-text">{product.description}</p>      
                                 <div className="meal-card-bottom">
                                     <h3 className="price">₱{product.price}</h3>
+                                    { isAuthenticated ?
+                                    <>
                                     <div className="btn-group" role="group">
                                         <button type="button" className="btn btn-outline-primary" onClick={() => updateCart(product, 'remove')}>-</button>
                                         <button type="" className="btn btn-primary disabled">QTY</button>
                                         <button type="button" className="btn btn-outline-primary btn-right-radius" onClick={() => updateCart(product, 'add')}>+</button>
                                     </div>
+                                    </>
+                                    :
+                                    <>
+                                    </>
+                                    }
                                 </div>
                             </div>
                         </div>
