@@ -112,6 +112,36 @@ nav a.active-link {
     border-radius: 20px;
 }
 
+button {
+    background-color: #fe7223;
+    color: #ffffff;
+    border: 0;
+}
+
+nav .greeting{
+    background-color: transparent;
+    color: #fe7223;
+    border: 0;
+}
+
+nav .greeting:hover{
+    background-color: transparent;
+    color: #fe7223;
+    border: 0;
+    cursor: default;
+}
+
+nav .greeting:active-link {
+    background-color: transparent;
+    color: #fe7223;
+    border: 0;
+}
+
+nav .greeting:focus{
+    background-color: transparent;
+    color: #fe7223;
+    border: 0;
+}
 
 /* MENU CONTENT */
 .content-tabs {

@@ -54,9 +54,9 @@ function App() {
                   <Nav>
                     {isAuthenticated ? (
                       <>
-                        <NavLink className="greeting">Hello, {user.fullname}</NavLink>
+                        <NavLink className="greeting">Hello, {user.fullname}!</NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'active-link' : ''}>
-                          <button onClick={logout}>Logout</button>
+                          <button className="logout" onClick={logout}>Log Out</button>
                         </NavLink>
                       </>
                     ) : (

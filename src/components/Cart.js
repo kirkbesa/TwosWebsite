@@ -42,7 +42,7 @@ const Cart = () => {
                                     <td>{item.productId ? item.productId.name : 'No product name'}</td>
                                     <td>{item.productId ? `₱${item.productId.price}` : 'N/A'}</td>
                                     <td>{item.quantity}</td>
-                                    <td>{item.productId ? `₱${item.productId.price * item.quantity}` : '₱0.00'}</td>
+                                    <td>{item.productId ? `₱${item.productId.price * item.quantity}` : 'Php 0.00'}</td>
                                     <td>
                                         <button className="btn">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ const Cart = () => {
                         <tbody>
                             <tr>
                                 <td><p>Total:</p></td>
-                                <td><p>₱{totalPrice}</p></td>
+                                <td><p>Php {totalPrice}</p></td>
                             </tr>
                         </tbody>
                     </table>
