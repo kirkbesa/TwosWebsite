@@ -21,7 +21,7 @@ const ProductItem = ({product, updateCart}) => {
                                 <h5 className="card-title">{product.name}</h5>
                                 <p className="card-text">{product.description}</p>      
                                 <div className="meal-card-bottom">
-                                    <h3 className="price">₱{product.price}</h3>
+                                    <h3 className="price">Php {product.price}</h3>
                                     { isAuthenticated ?
                                     <>
                                     <div className="btn-group" role="group">

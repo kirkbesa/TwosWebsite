@@ -33,7 +33,7 @@ const ProductDetailPage = () => {
       <h2>{product.name}</h2>
       <img src={product.image} alt={product.name} />
       <p>{product.description}</p>
-      <p>${product.price}</p>
+      <p>Php {product.price}</p>
       <label>
         Quantity: 
         <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
