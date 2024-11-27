@@ -6,6 +6,7 @@ import Image4 from '../images/Image4.jpg';
 import Image5 from '../images/Image5.jpg';
 import marker from '../images/marker.png';
 import promoImg from '../images/promoImage1.jpg';
+import Footer from '../components/Footer.js';
 
 import Carousel from 'react-bootstrap/Carousel';
 
@@ -14,6 +15,7 @@ import React, { useState, useEffect } from 'react';
 const Home = () => {
 
   return (
+    <>
     <div id='homeBGContainer'>
       <div id='homeContainer' className='fade-in'>
         <div id='imageCarousel'>
@@ -70,8 +72,11 @@ const Home = () => {
             <img className="promoImg" src={promoImg} alt="promos"/>
           </div>
         </div>
+        <Footer />
       </div>
     </div>
+
+    </>
   ); 
 };
 
