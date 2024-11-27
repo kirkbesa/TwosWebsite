@@ -1,14 +1,22 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
 #homeBGContainer {
     background-image: url("../images/TwosBackground.png");
     background-size: cover; 
-    background-position: center; 
+    background-position: fixed; 
     background-repeat: no-repeat; 
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 91.4vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 h1 {
@@ -25,11 +33,7 @@ h1 {
     width: 75%;
     height: 100%;
     overflow: auto;
-}
-
-.base-content{
-    margin: 0;
-    padding: 0;
+    text-align: justify;
 }
 
 #homeContainer::-webkit-scrollbar {
