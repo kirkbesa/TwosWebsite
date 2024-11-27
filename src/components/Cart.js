@@ -44,14 +44,14 @@ const Cart = () => {
                                     <td>{item.quantity}</td>
                                     <td>{item.productId ? `₱${item.productId.price * item.quantity}` : 'Php 0.00'}</td>
                                     <td>
-                                        <button className="btn">
+                                        <button className="btn" onClick={() => updateCart(item.productId, 'remove')}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
                                                 <path d="M19 13H5V11H19V13Z" fill="currentColor"/>
                                             </svg>
                                         </button>
                                     </td>
                                     <td>
-                                        <button className="btn">
+                                        <button className="btn" onClick={() => updateCart(item.productId, 'add')}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
                                                 <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
                                             </svg>
