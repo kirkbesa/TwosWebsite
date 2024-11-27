@@ -31,7 +31,6 @@ function Login() {
         if (response.ok) {
             login(data.user);
             navigate('/');
-            console.log("LOG IN SUCCESS KIRK")
         } else {
             console.error("Login failed:", data.message);
         }

@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useContext } from 'react';
-import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink, useNavigate } from 'react-router-dom';
 import { CartProvider } from './components/CartContext';
 import { AuthContext } from './context/authContext';
 import Home from './pages/Home'; 
@@ -13,7 +13,6 @@ import Logo from './images/TwosLogo.png';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function App() {
   const { user, isAuthenticated, logout } = useContext(AuthContext);
@@ -55,7 +54,7 @@ function App() {
                     {isAuthenticated ? (
                       <>
                         <NavLink className="greeting">Hello, {user.fullname}!</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? 'active-link' : ''}>
+                        <NavLink to='/' className='active-link'>
                           <button className="logout" onClick={logout}>Log Out</button>
                         </NavLink>
                       </>

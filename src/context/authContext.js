@@ -9,11 +9,13 @@ const AuthProvider = ({ children }) => {
     const login = (userData) => {
         setIsAuthenticated(true);
         setUser(userData);
+        console.log('Logged In');
     };
 
     const logout = () => {
         setIsAuthenticated(false);
         setUser('Guest');
+        console.log('Logged Out');
     };
 
     return (
