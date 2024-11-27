@@ -7,8 +7,9 @@ body, html {
 
 #homeBGContainer {
     background-image: url("../images/TwosBackground.png");
-    background-size: cover; 
-    background-position: fixed; 
+    background-size: cover;
+    background-position: fixed;
+    background-attachment: fixed;
     background-repeat: no-repeat; 
     margin: 0;
     padding: 0;
@@ -73,34 +74,6 @@ h1 {
     margin: 0;
     padding: 0;
 }
-
-/* .homeBtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    cursor: pointer;
-    padding: 20px;
-    border-radius: 100%;
-    max-height: 47px;
-    max-width: 47px;
-    font-weight: bolder;
-    font-size: 20px;
-    background-color: #fe7223 !important;
-    color: rgba(255, 255, 255, 1) !important;
-    border-color: rgba(254, 114, 35, 0.5) !important;
-    font-family: 'Poppins', sans-serif;
-    margin: 0px 10px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-}
-
-.homeBtn:hover {
-    background-color: rgba(254, 114, 35, 0.5) !important;
-    color: #ffffff !important;
-    border-color: #fe7223 !important;
-} */
 
 #prev {
     left: 10px; 
@@ -169,6 +142,10 @@ img.markerCircle{
     width: 160px;
     margin-left: -12px;
     margin-bottom: 10px;
+}
+
+.promosDiv .promosText {
+    margin-left: 18px;
 }
 
 .promoImg{
