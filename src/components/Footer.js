@@ -43,7 +43,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div class="text-center p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
+            <div class="text-center p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)", fontFamily: 'Poppins'}}>
             © 2024 Copyright:
             <a class="text-white" href="https://www.facebook.com/buytwos" target="_blank" rel="noreferrer" style={{textDecoration: "none"}}> Two's Marikina</a>
             </div>
