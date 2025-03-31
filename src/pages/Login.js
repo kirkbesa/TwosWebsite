@@ -40,8 +40,8 @@ function Login() {
   };
 
   return (
-    <div className='base-content'>
-      <div className='login-page'>
+    <div className="base-content">
+      <div className="login-page">
         <div className="login-container fade-in">
           <form className="login-form" onSubmit={handleSubmit}>
             <div id="logoContainer">
@@ -59,8 +59,12 @@ function Login() {
               <button className="login-btn" type="submit">Login</button>
             </div>
           </form>
+          {error && <p className="error-message">{error}</p>}
           <p>
-            Don't have an account yet? <Link to="/Signup" className="register-link">Register</Link>
+            Don't have an account yet?{" "}
+            <Link to="/Signup" className="register-link">
+              Register
+            </Link>
           </p>
         </div>
       </div>
